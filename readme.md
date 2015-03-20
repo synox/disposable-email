@@ -38,7 +38,7 @@ There is a Vagrantfile to be used with [vagrant](https://www.vagrantup.com/).
 ### OSX dependencies 
 - install php: https://github.com/Homebrew/homebrew-php
 - add php to path: fish config: `set PATH /usr/local/opt/php55/bin $PATH`
--  pecl install mailparse
+-  `pecl install mailparse`
 - (see "php --ini" for file: ) `echo "extension=mailparse.so" >> /usr/local/etc/php/5.5/php.ini`
 
 ## See also
