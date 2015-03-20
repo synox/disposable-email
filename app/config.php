@@ -2,7 +2,7 @@
 
 # development mode:
 error_reporting(E_ALL);
-R::setup('sqlite:db.sqlite' ); 
+R::setup('sqlite:app/db.sqlite' ); 
 
 # enable for production use:
 //error_reporting(0);
