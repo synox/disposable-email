@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+	<div class="starter-template">
+		<h1>{{address}}</h1>
+		<p class="lead">Waiting for new mail...</p>
+	</div>
+</div>
+<script>
+	function ReloadPage() {
+	   location.reload();
+	};
+	$(document).ready(function() {
+	  setTimeout("ReloadPage()", 10000); 
+	});
+</script>
+
+
+{%endblock%}

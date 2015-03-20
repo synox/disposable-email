@@ -1,0 +1,19 @@
+{
+    "require": {
+      "slim/slim": "2.*",
+      "slim/views": "0.1.*",
+      "twig/twig": "1.*",
+      "gnugat/PronounceableWord": "*",
+      "html2text/html2text": "*",
+        "exorus/php-mime-mail-parser": "~1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "app/lib",
+            "DisposableEmail\\": "app"
+        },
+        "files": [
+          "vendor/redbeanphp/rb.php"
+        ]
+    }
+}

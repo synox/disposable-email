@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{address}}</title>
+
+    <!-- Bootstrap -->
+    <link href="{{ baseUrl() }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ baseUrl() }}/css/mail.css" rel="stylesheet">
+
+    <link rel="icon"       type="image/png"       href="{{ baseUrl() }}/favicon.ico">
+
+    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+ {% block navigation%}  
+  <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{baseUrl()}}"><span class="glyphicon glyphicon-inbox"></span> Mail</a>
+        </div>
+
+          <form class="navbar-form navbar-left" role="search" action="{{ urlFor('switch')}}" method="post">
+            <div class="form-group">
+              <input name="name" onclick="this.select();" type='text' class="form-control" value='{{address}}' />
+            </div>
+            <button type="submit" class="btn btn-default">Show</button>
+          </form>  
+        
+      </div>
+    </div>
+ {%endblock%}
+
+    <script src="{{ baseUrl() }}/js/jquery-2.1.1.min.js"></script>
+    <script src="{{ baseUrl() }}/js/stickytitles.js"></script>
+    <script src="{{ baseUrl() }}/js/bootstrap.min.js"></script>
+    
+
+      {% block content%}  
+      {%endblock%}
+
+  
+
+   
+  </body>
+</html>
