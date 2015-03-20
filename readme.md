@@ -5,6 +5,8 @@ This disposable email solution can be hosted on your own standard PHP-webhoster.
 ## Usage
 When accessing the web-app a random email address is generated for you. The page will reload until emails have arrived. You can delete emails and see the original sourcecode. 
 
+### Example Screenshot
+![screenshot](assets/screenshot.png)
 
 ## Licence
 Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
