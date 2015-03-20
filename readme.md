@@ -19,10 +19,10 @@ https://creativecommons.org/licenses/by-nc/4.0/
 
 - download this repo to a  *non-public* directory on your the webserver. Then create a symlink to the `public` directory in your *public http_docs* directory.
   
-      cd /var/www/
-      git clone TODO
-      cd /var/www/html
-      ln -s ../disposable-email/public/ mail
+        cd /var/www/
+        git clone TODO
+        cd /var/www/html
+        ln -s ../disposable-email/public/ mail
 
 ## Configuration
 - forward/pipe e-mail to the php script `app/pipe_input.php` (e.g.  [cpanel](https://documentation.cpanel.net/display/ALD/Forwarders#Forwarders-PipetoaProgram) docs)
