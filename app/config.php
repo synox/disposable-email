@@ -15,6 +15,6 @@ $serverName = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost'
 define('DOMAIN', str_replace('www.', '', $serverName));
 
 // URI-Redirector Prefix (leave empty for direct links)
-define('URI_REDIRECT_PREFIX', ""); 
+define('URI_REDIRECT_PREFIX', "http://www.redirect.am/?"); 
 
 // date_default_timezone_set('Europe/Paris');

@@ -51,7 +51,7 @@ class AutoLinkTwigExtension extends \Twig_Extension
                 $url = $match[0];
                 $href = $url;
                 
-                if (false == strpos($href, 'http')) {
+                if (false === strpos($href, 'http')) {
                     $href = 'http://' . $href;
                 }
                 return '<a href="' . URI_REDIRECT_PREFIX . $href . '" rel="noreferrer">' . $url . '</a>';
