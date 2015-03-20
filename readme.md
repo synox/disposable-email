@@ -11,18 +11,26 @@ Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 
 https://creativecommons.org/licenses/by-nc/4.0/
 
+## Requirements
+
+* PHP, Version 5.3.0
+* Apache 2
+* [mailparse extension](http://pecl.php.net/package/mailparse)
+* [Composer](https://getcomposer.org/doc/00-intro.md#globally) (PHP Package Manager)
+
 ## Installation
 
+* Clone this repository
+* Download dependencies: 
+
+		cd path/to/project/src
+		composer install
+
+* Create a symlink from the ``htdocs`` to the ``public`` directory: ``cd /var/www/html; ln -s /path/to/disposable-email/public mail`` 
+    
 - assure the mailparse extension is installed. The following command should not print any error: 
   
         <?php mailparse_msg_create(); ?>
-
-- download this repo to a  *non-public* directory on your the webserver. Then create a symlink to the `public` directory in your *public http_docs* directory.
-  
-        cd /var/www/
-        git clone TODO
-        cd /var/www/html
-        ln -s ../disposable-email/public/ mail
 
 ## Configuration
 - forward/pipe e-mail to the php script `app/pipe_input.php` (e.g.  [cpanel](https://documentation.cpanel.net/display/ALD/Forwarders#Forwarders-PipetoaProgram) docs)
