@@ -5,9 +5,8 @@
 
 	<div class="row title-header">
 		  <div class="col-sm-4">From</div>
-		  <div class="col-sm-5">Subject</div>
-		  <div class="col-sm-2">Date</div>
-		  <div class="col-sm-1"></div>
+		  <div class="col-sm-6">Subject</div>
+		  <div class="col-sm-2"></div>
 	</div>
 
 
@@ -15,12 +14,10 @@
 
 	<div class="row email-header followMeBar">
 	  <div class="col-sm-4">{{email.from}}</div>
-	  <div class="col-sm-5">{{email.subject}}</div>
-	  <div class="col-sm-2">{{email.date}}</div>
-	  <div class="col-sm-1">
-	  	<a href="{{urlFor('delete', {name: email.username, id: email.id}) }}">Delete</a>
-<br>
-<a href="{{urlFor('source', {name: email.username, id: email.id}) }}">Source</a>
+	  <div class="col-sm-6">{{email.subject}}</div>
+	  <div class="col-sm-2">
+	  	<a href="{{urlFor('delete', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-trashcan"></span> Delete</a> &nbsp;
+<a href="{{urlFor('source', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-code"></span>&nbsp;Source</a>
 	  	</div>
 	</div>
 
