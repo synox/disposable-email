@@ -22,25 +22,18 @@ https://creativecommons.org/licenses/by-nc/4.0/
 
 ## Installation
 
-* Clone this repository
-* Download dependencies: 
-
-		cd path/to/project/src
-		composer install
-
-* Create a symlink from the ``htdocs`` to the ``public`` directory: ``cd /var/www/html; ln -s /path/to/disposable-email/public mail`` 
-    
+- Clone/download this repository 
 - assure the mailparse extension is installed. The following command should not print any error: 
   
         <?php mailparse_msg_create(); ?>
 
 ## Configuration
-- forward/pipe e-mail to the php script `app/pipe_input.php` (e.g.  [cpanel](https://documentation.cpanel.net/display/ALD/Forwarders#Forwarders-PipetoaProgram) docs)
+- forward/pipe email to the php script `app/pipe_input.php` (e.g.  [cpanel](https://documentation.cpanel.net/display/ALD/Forwarders#Forwarders-PipetoaProgram) docs)
 - (optionally) configure a different database like mysql in `app/config.php`
+- (optionally) configure the link redirection provider (to keep the existence of your installation secret) in `app/config.php`
  
 ## TODO
  1. security audit against xss/sqli
- 1. simplify installation: zero-config
 
 ## development environment
 There is a Vagrantfile to be used with [vagrant](https://www.vagrantup.com/). 
