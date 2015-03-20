@@ -1,5 +1,11 @@
 Options -MultiViews
-RewriteEngine On
+Options -Indexes
+# disable detection of directories
+DirectorySlash Off
 
-order allow,deny
-deny from all
+RewriteEngine On
+# assets can be loaded
+RewriteRule ^assets/(.*) $0 [L]
+# everything else must go to the app
+RewriteRule ^(.*)$ index.php [L]
+

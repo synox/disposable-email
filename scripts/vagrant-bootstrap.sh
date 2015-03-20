@@ -1,6 +1,6 @@
 # php modules
 sudo apt-get update
-sudo apt-get -y install php-pear sqlite3 php5-sqlite
+sudo apt-get -y install php-pear php5-dev sqlite3 php5-sqlite
 sudo pecl install mailparse
 sudo sh -c 'echo "extension=mailparse.so" >> /etc/php5/apache2/php.ini'
 sudo sh -c 'echo "extension=mailparse.so" >> /etc/php5/cli/php.ini'

@@ -1,9 +1,0 @@
-Options -MultiViews
-RewriteEngine On
-
-order allow,deny
-allow from all
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [L]
-

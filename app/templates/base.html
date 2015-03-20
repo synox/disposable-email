@@ -7,12 +7,10 @@
     <title>{{address}}</title>
 
     <!-- Bootstrap -->
-    <link href="{{ baseUrl() }}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ baseUrl() }}/css/mail.css" rel="stylesheet">
-
-    <link rel="icon"       type="image/png"       href="{{ baseUrl() }}/favicon.ico">
-
-    
+    <link href="{{ baseUrl() }}/assets/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ baseUrl() }}/assets/mail.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ baseUrl() }}/assets/octicons/octicons.css">
+    <link rel="icon"       type="image/png"       href="{{ baseUrl() }}/assets/favicon.ico">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +26,7 @@
   <div class="navbar navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="{{baseUrl()}}"><span class="glyphicon glyphicon-inbox"></span> Mail</a>
+          <a class="navbar-brand" href="{{baseUrl()}}">  <span class="mega-octicon octicon-inbox"></span> Mail</a>
         </div>
 
           <form class="navbar-form navbar-left" role="search" action="{{ urlFor('switch')}}" method="post">
@@ -42,9 +40,9 @@
     </div>
  {%endblock%}
 
-    <script src="{{ baseUrl() }}/js/jquery-2.1.1.min.js"></script>
-    <script src="{{ baseUrl() }}/js/stickytitles.js"></script>
-    <script src="{{ baseUrl() }}/js/bootstrap.min.js"></script>
+    <script src="{{ baseUrl() }}/assets/jquery-2.1.1.min.js"></script>
+    <script src="{{ baseUrl() }}/assets/stickytitles.js"></script>
+    <script src="{{ baseUrl() }}/assets/bootstrap.min.js"></script>
     
 
       {% block content%}  
