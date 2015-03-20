@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8e4294de61294d5037bcf7401558629d",
+    "hash": "dabb6166cef38f3d0fca22b7bad6e8dd",
     "packages": [
         {
             "name": "exorus/php-mime-mail-parser",
