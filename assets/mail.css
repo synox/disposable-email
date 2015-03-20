@@ -1,6 +1,9 @@
 body {
   background: #eeeeee;
 }
+.navbar {
+	background-color: #D9E2E9;
+}
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -14,15 +17,15 @@ body {
 .email-table .title-header {
 	font-weight: bold;
 	color: #fff;
-	background: gray;
+	background: #7C96AB;
 	padding: 10px;
-	border: 1px solid gray;
+	border: 1px solid #7C96AB;
 }
 
 .email-table .email-header {
 	font-weight: bold;
-	border-top: 5px solid gray;
-	border-bottom: 1px solid gray;
+	border-top: 5px solid #7C96AB;
+	border-bottom: 1px solid #7C96AB;
 	padding: 10px
 }
 
