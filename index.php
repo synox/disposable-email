@@ -46,6 +46,12 @@ $app->post('/switch', function () use ($app) {
     $app->redirect($app->urlFor('read', array('name' => $name)));
 })->name('switch');
 
+// ajax check to see if there is new mail
+$app->get('/check/:name', function ($name) use ($app) {
+    $emails = R::find( 'mail', 'username = ?', array( $name ) );
+    print sizeOf($emails);
+})->name('mailcount');
+
 // delete an email
 $app->get('/:name/delete/:id', function ($name, $id) use ($app) {
     

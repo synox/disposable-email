@@ -8,14 +8,22 @@
 		<p class="lead">Waiting for new mail...</p>
 	</div>
 </div>
-<script>
-	function ReloadPage() {
-	   location.reload();
-	};
-	$(document).ready(function() {
-	  setTimeout("ReloadPage()", 10000); 
-	});
-</script>
 
+<script>
+	function checkMails() {	
+		$.ajax({
+			url: "{{urlFor('mailcount', {'name':name})}}",
+			})
+			.done(function( data ) {
+				var count = parseInt(data);
+				if(count>0) {
+					location.reload();
+				}
+		});
+	};
+	 $(document).ready(function() {
+		setInterval(checkMails, 5000); 
+	 });
+</script>
 
 {%endblock%}
