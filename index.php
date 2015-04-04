@@ -74,7 +74,7 @@ $app->get('/:name/source/:id', function ($name, $id) use ($app) {
 })->name('source');
 
 // read emails
-$app->get('/:name', function ($name) use ($app) {
+$app->get('/:name/', function ($name) use ($app) {
     $name = preg_replace('/@.*$/', "", $name);    
     $address = $name . '@' .DOMAIN;
 

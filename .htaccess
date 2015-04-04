@@ -1,7 +1,5 @@
 Options -MultiViews
 Options -Indexes
-# disable detection of directories
-DirectorySlash Off
 
 RewriteEngine On
 # assets can be loaded
