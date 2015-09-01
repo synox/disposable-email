@@ -73,6 +73,19 @@ $app->get('/:name/source/:id', function ($name, $id) use ($app) {
     }
 })->name('source');
 
+// show html
+$app->get('/:name/html/:id', function ($name, $id) use ($app) {
+    $email = R::findOne( 'mail', ' username = ? AND id = ? ', array( $name, $id ) );
+    if(! is_null($email)) {
+        $html_safe = preg_replace("/https?:\\/\\//i", URI_REDIRECT_PREFIX . '\\0', $email->body_html);
+        
+        
+        echo $html_safe;
+    } else {
+      $app->notFound();
+    }
+})->name('html');
+
 // read emails
 $app->get('/:name/', function ($name) use ($app) {
     $name = preg_replace('/@.*$/', "", $name);    

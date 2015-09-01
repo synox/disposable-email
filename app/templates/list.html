@@ -17,7 +17,8 @@
 	  <div class="col-sm-6">{{email.subject}}</div>
 	  <div class="col-sm-2">
 	  	<a href="{{urlFor('delete', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-trashcan"></span> Delete</a> &nbsp;
-<a href="{{urlFor('source', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-code"></span>&nbsp;Source</a>
+			<a href="{{urlFor('source', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-code"></span>&nbsp;Source</a> &nbsp;
+			<a href="{{urlFor('html', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-browser"></span>&nbsp;Html</a>
 	  	</div>
 	</div>
 
