@@ -53,6 +53,12 @@ body {
 	overflow: hidden;
 }
 
+footer p {
+  margin-top: 50px;
+  text-align: center;
+}
+
+
 .nobr { white-space: nowrap }
 
 .followMeBar {
