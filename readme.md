@@ -23,11 +23,12 @@ https://creativecommons.org/licenses/by-nc/4.0/
 * [Composer](https://getcomposer.org/doc/00-intro.md#globally) (PHP Package Manager)
 
 ## Installation
-
-- Clone/download this repository 
 - assure the mailparse extension is installed. The following command should not print any error: 
   
         <?php mailparse_msg_create(); ?>
+
+- Clone/download this repository 
+- run `composer install`
 
 ## Configuration
 - forward/pipe email to the php script `app/pipe_input.php` (e.g.  [cpanel](https://documentation.cpanel.net/display/ALD/Forwarders#Forwarders-PipetoaProgram) docs)
