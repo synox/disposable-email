@@ -29,21 +29,21 @@ class Input {
   // isolate real username
   public function getUsername() {
     $addr = $this->getDeliveredTo();
-    
+
     // if there are multiple '@', then look only inside '<...>'
     if(substr_count($addr, '@') > 1) {
       if( preg_match('/\<(.*)?\>/', $addr, $matches) ) {
           $addr = $matches[1];
       }
     }
-    
-    $pattern = '/\b([\w_-]+)@/';
+
+    $pattern = '/\b([.\w_-]+)@/';
     if( preg_match($pattern, $addr, $matches) ) {
         return $matches[1];
     }
     return "-";
   }
-  
+
 
   // extract final recipient
   public function getDeliveredTo() {
