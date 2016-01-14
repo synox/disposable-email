@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container email-table">
+<div class="container email-table panel-group" role="tablist" id="email-table">
 
 	<div class="row title-header">
 		  <div class="col-sm-4">From</div>
@@ -12,40 +12,44 @@
 
 {% for email in emails %}
 
-	<div class="row email-header followMeBar">
-	  <div class="col-sm-4">{{email.from}}</div>
-	  <div class="col-sm-6">{{email.subject}}</div>
-	  <div class="col-sm-2">
-	  	<a href="{{urlFor('delete', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-trashcan"></span> Delete</a> &nbsp;
-			<a href="{{urlFor('source', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-code"></span>&nbsp;Source</a> &nbsp;
-			<a href="{{urlFor('html', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-browser"></span>&nbsp;Html</a>
-	  	</div>
-	</div>
-
-	<div class="row email-info">
-		<div class="col-sm-10">
-		<dl class="info-list">
-			<dt>To:</dt>
-				<dd>{{email.to}}</dd>
-			<dt>From:</dt>
-				<dd>{{email.from}}</dd>
-			<dt>Subject:</dt>
-				<dd>{{email.subject}}</dd>
-			<dt>Date:</dt>
-				<dd>{{email.date}}</dd>
-			</dl>
-
+	<div class="row email-header followMeBar" id="mail-{{email.id}}" aria-multiselectable="true">
+		<div role="tab">
+		  <div class="col-sm-4"><a href="#collapseMail{{email.id}}" data-toggle="collapse" data-parent="#email-table" aria-expanded="true" aria-controls="collapseMail{{email.id}}">{{email.from}}</a></div>
+		  <div class="col-sm-6"><a href="#collapseMail{{email.id}}" data-toggle="collapse" data-parent="#email-table" aria-expanded="true" aria-controls="collapseMail{{email.id}}">{{email.subject}}</a></div>
+		  <div class="col-sm-2">
+		  	<a href="{{urlFor('delete', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-trashcan"></span> Delete</a> &nbsp;
+				<a href="{{urlFor('source', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-code"></span>&nbsp;Source</a> &nbsp;
+				<a href="{{urlFor('html', {name: email.username, id: email.id}) }}" class="nobr"><span class="octicon octicon-browser"></span>&nbsp;Html</a>
+		  </div>
 		</div>
 	</div>
 
-	<div class="row email-text">
-	  {% autoescape false %}
-		  {% if email.body_text|length > 0 and email.body_text != "0" %}
-	  		<div class="col-sm-10">{{email.body_text|nl2br|auto_link_text}}</div>
-	  	  {% else %}
-	  	  	<div class="col-sm-10">{{email.body_html|html2Text|nl2br|auto_link_text}}</div>
-	  	  {% endif %}
-  	  {% endautoescape %}
+	<div class="collapse in" role="tabpanel" id="collapseMail{{email.id}}">
+		<div class="row email-info">
+			<div class="col-sm-10 panel-body" >
+			<dl class="info-list">
+				<dt>To:</dt>
+					<dd>{{email.to}}</dd>
+				<dt>From:</dt>
+					<dd>{{email.from}}</dd>
+				<dt>Subject:</dt>
+					<dd>{{email.subject}}</dd>
+				<dt>Date:</dt>
+					<dd>{{email.date}}</dd>
+				</dl>
+
+			</div>
+		</div>
+
+		<div class="row email-text">
+		  {% autoescape false %}
+			  {% if email.body_text|length > 0 and email.body_text != "0" %}
+		  		<div class="col-sm-10">{{email.body_text|nl2br|auto_link_text}}</div>
+		  	  {% else %}
+		  	  	<div class="col-sm-10">{{email.body_html|html2Text|nl2br|auto_link_text}}</div>
+		  	  {% endif %}
+  		  {% endautoescape %}
+	</div>
 	</div>
 {% endfor %}
 </div>
