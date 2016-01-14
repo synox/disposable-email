@@ -37,7 +37,7 @@ class Input {
       }
     }
     
-    $pattern = '/\b([\w_-]+)@/';
+    $pattern = '/\b([\.\w_-]+)@/';
     if( preg_match($pattern, $addr, $matches) ) {
         return $matches[1];
     }
