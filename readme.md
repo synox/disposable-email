@@ -2,7 +2,7 @@
 
 This disposable email solution can be hosted on your own standard PHP-webhoster. All you need is PHP with mailparse extension and "Pipe to a Program" functionality. The system is as simple as possible, with minimal codebase and complexity. 
 
-Note: there is also an IMAP version without database and that does not need "pipe to command". https://github.com/synox/disposable-email-imap
+Note: there is also an IMAP version without database and that does not need "pipe to command". https://github.com/synox/disposable-mailbox
 
 ## Usage
 When accessing the web-app a random email address is generated for you. The page will reload until emails have arrived. You can delete emails and see the original sourcecode. 
