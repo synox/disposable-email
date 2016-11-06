@@ -2,7 +2,7 @@
 
 This disposable email solution can be hosted on your own standard PHP-webhoster. All you need is PHP with mailparse extension and "Pipe to a Program" functionality. The system is as simple as possible, with minimal codebase and complexity. 
 
-Note: there is also an IMAP version without database and that does not need "pipe to command". https://github.com/synox/disposable-mailbox
+*Please note*: there is also an simpler IMAP version without database and that does not need "pipe to command". https://github.com/synox/disposable-mailbox
 
 ## Usage
 When accessing the web-app a random email address is generated for you. The page will reload until emails have arrived. You can delete emails and see the original sourcecode. 
@@ -46,6 +46,23 @@ There is a Vagrantfile to be used with [vagrant](https://www.vagrantup.com/).
 - add php to path: fish config: `set PATH /usr/local/opt/php55/bin $PATH`
 -  `pecl install mailparse`
 - (see "php --ini" for file: ) `echo "extension=mailparse.so" >> /usr/local/etc/php/5.5/php.ini`
+
+## Troubleshooting
+
+### Mails do not appear in the mailbox
+First make sure you check the php error log. also enable php error reporting with `error_reporting(E_ALL);` in `config.php`. 
+
+Then also try to run the command manually from the command line. For this login into your server by ssh. 
+Create a sample mail (like https://gist.github.com/synox/fa11060975bec7250a46) and save it somewhere on the server. 
+Then run the script the same way as the mailserver would pipe the mail to it. 
+
+        cat samplemail.txt | php /path/to/app/pipe_input.php
+
+That should either process the mail or return an error. 
+
+## I can't get it to work. It's too complicated. 
+I have another solution which is easier to configure and install: https://github.com/synox/disposable-mailbox
+ 
 
 ## See also
  - inspired by script: https://github.com/moein7tl/TempMail/blob/master/web/index.php
