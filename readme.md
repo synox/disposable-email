@@ -1,8 +1,9 @@
+# WARNING: Discontinued
+## this repository is not maintained any more! please use https://github.com/synox/disposable-mailbox instead, which is a complete rewrite with angularjs.  it is also simpler by using IMAP, without database and it that does not need "pipe to command".
+
 # self-hosted disposable email system
 
 This disposable email solution can be hosted on your own standard PHP-webhoster. All you need is PHP with mailparse extension and "Pipe to a Program" functionality. The system is as simple as possible, with minimal codebase and complexity. 
-
- :warning: **Please note: there is also an simpler IMAP version without database and that does not need "pipe to command".** https://github.com/synox/disposable-mailbox
 
 ## Usage
 When accessing the web-app a random email address is generated for you. The page will reload until emails have arrived. You can delete emails and see the original sourcecode. 
